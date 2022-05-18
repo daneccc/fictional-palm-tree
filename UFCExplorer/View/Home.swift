@@ -24,6 +24,36 @@ struct Home: View {
                 .ignoresSafeArea(.all, edges: .all)
             
             VStack {
+                VStack {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+
+                        TextField("Search", text: $mapData.searchTxt).colorScheme(.light)
+                    }
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
+                    .background(Color.white)
+
+                    // displaying results 
+                    if !mapData.places.isEmpty && mapData.searchTxt != "" {
+                        ScrollView {
+                            VStack(spacing: 15) {
+                                ForEach(mapData.places) { place in
+                                    Text(place.placemark.name ?? "")
+                                        .foregroundColor(.black)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                                    Divider()
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                .padding()
+                
+
                 Spacer()
                 
                 VStack {
@@ -57,9 +87,21 @@ struct Home: View {
             Alert(title: Text("Permission Denied"), message: Text("Please Enable Permission In App Settings"), dismissButton: .default(Text("Goto Settings"), action: {
                 // redireting user to settings ...
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                
-                
             }))
+        })
+        // .preferredColorScheme(.dark)
+        .onChange(of: mapData.searchTxt, perform: { value in 
+            
+            // search places
+            let delay = 0.3
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                if value == mapData.searchTxt {
+
+                    // search ...
+                    self.mapData.searchQuery()
+                }
+            }
         })
     }
 }
