@@ -27,7 +27,7 @@ struct Home: View {
                 Spacer()
                 
                 VStack {
-                    Button(action: {}, label: {
+                    Button(action: mapData.focusLocation, label: {
                         Image(systemName: "location.fill")
                             .font(.title2)
                             .padding(10)
