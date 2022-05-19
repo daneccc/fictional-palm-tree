@@ -24,7 +24,7 @@ struct Home: View {
                 .ignoresSafeArea(.all, edges: .all)
             
             VStack {
-                VStack {
+                VStack (spacing: 0) {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
@@ -43,12 +43,18 @@ struct Home: View {
                                     Text(place.place.name ?? "")
                                         .foregroundColor(.black)
                                         .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.leading)
+                                        .onTapGesture {
+                                            mapData.selectPlace(place: place)
+                                        }
 
                                     Divider()
                                     
                                 }
                             }
+                            .padding(.top)
                         }
+                        .background(Color.white)
                     }
                 }
                 .padding()
