@@ -40,7 +40,7 @@ struct Home: View {
                         ScrollView {
                             VStack(spacing: 15) {
                                 ForEach(mapData.places) { place in
-                                    Text(place.placemark.name ?? "")
+                                    Text(place.place.name ?? "")
                                         .foregroundColor(.black)
                                         .frame(maxWidth: .infinity, alignment: .leading)
 

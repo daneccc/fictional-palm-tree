@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3518E5C1283664DA00A60254 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518E5C0283664DA00A60254 /* Place.swift */; };
 		35D9462A283298EE007C2918 /* UFCExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D94629283298EE007C2918 /* UFCExplorerApp.swift */; };
 		35D9462C283298EE007C2918 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D9462B283298EE007C2918 /* ContentView.swift */; };
 		35D9462E283298EF007C2918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D9462D283298EF007C2918 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3518E5C0283664DA00A60254 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		35D94626283298EE007C2918 /* UFCExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UFCExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D94629283298EE007C2918 /* UFCExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UFCExplorerApp.swift; sourceTree = "<group>"; };
 		35D9462B283298EE007C2918 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3518E5C428366A3600A60254 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3518E5C0283664DA00A60254 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		35D9461D283298EE007C2918 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 		35D94628283298EE007C2918 /* UFCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				3518E5C428366A3600A60254 /* Model */,
 				35D946372833C776007C2918 /* ViewModel */,
 				35D946382833C780007C2918 /* View */,
 				35D94629283298EE007C2918 /* UFCExplorerApp.swift */,
@@ -162,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3518E5C1283664DA00A60254 /* Place.swift in Sources */,
 				35D9462C283298EE007C2918 /* ContentView.swift in Sources */,
 				35D946402833CC64007C2918 /* MapViewModel.swift in Sources */,
 				35D9463E2833CBA9007C2918 /* MapView.swift in Sources */,
