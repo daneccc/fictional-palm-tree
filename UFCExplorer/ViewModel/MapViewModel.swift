@@ -15,7 +15,12 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var mapView = MKMapView()
     
     // region ...
-    @Published var region : MKCoordinateRegion!
+    @Published var region : MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: -3.746469393680665,
+                                       longitude: -38.57421686876706),
+        latitudinalMeters: 1000,
+        longitudinalMeters: 1000
+    )
     // based on location it will set up ...
     
     // alert ...
@@ -29,6 +34,11 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     // searched places
     @Published var places : [Place] = []
+    
+//    let centers: [Center] = [
+//        .init(name: "One", lat: 37.334, long: -122.009),
+//        .init(name: "Two", lat: 37.380, long: -122.010),
+//    ]
     
     // updating map type
     func updateMapType() {
